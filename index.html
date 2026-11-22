@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Embedded360 — Immersive Virtual Engineering Laboratory</title>
+<meta name="description" content="Embedded360 — an immersive virtual engineering laboratory for embedded systems, electronics, robotics, IoT and intelligent automation. Explore. Connect. Program. Simulate. Analyse.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="manifest" href="./site.webmanifest">
+<link rel="apple-touch-icon" href="./icon.svg">
+<link rel="stylesheet" href="./css/e360.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232fd4d4'/><path d='M9 11h14M9 16h14M9 21h14' stroke='%2304211f' stroke-width='2.4' stroke-linecap='round'/></svg>">
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<div id="app">
+
+  <header class="topbar">
+    <div class="brand" id="brand" title="Embedded360 — Home">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#04211f" stroke-width="2.2" stroke-linecap="round">
+          <path d="M4 8h5M15 8h5M4 16h5M15 16h5"/><rect x="9" y="5" width="6" height="14" rx="1.6" fill="#04211f" stroke="none"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">Embedded<span>360</span></div>
+        <div class="brand-tag">Virtual Engineering Lab</div>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav"></nav>
+
+    <div class="topbar-right">
+      <button class="btn btn-ghost btn-icon" id="btn-theme" title="Toggle light / dark theme">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/>
+        </svg>
+      </button>
+      <a class="btn btn-sm" href="#/docs">Docs</a>
+      <a class="btn btn-primary btn-sm" href="#/labs">Open Lab</a>
+    </div>
+  </header>
+
+  <main id="view" class="page"><div class="loading"><div class="spinner"></div>Initialising Embedded360…</div></main>
+
+  <footer class="statusbar">
+    <span class="seg"><span class="led on" id="st-led"></span><span id="st-mode">VIRTUAL SIMULATION</span></span>
+    <span class="seg" id="st-ctx">No experiment loaded</span>
+    <span class="spacer"></span>
+    <span class="seg" id="st-engine">engine: idle</span>
+    <span class="seg" id="st-build">Embedded360 v0.7.0</span>
+  </footer>
+</div>
+
+<div id="toasts"></div>
+<div id="modal-root"></div>
+
+<script type="module" src="./js/app.js"></script>
+<noscript><p style="padding:24px">Embedded360 requires JavaScript and WebGL.</p></noscript>
+</body>
+</html>
